@@ -55,6 +55,9 @@ int getlines(char* input, int input_length, int width, char** lines)
 
     while(!lastline)
     {
+	if(num_lines > MAX_LINES) //quietly print up to 25 lines
+		break;
+
         lines[num_lines] = malloc(width);
         memset(lines[num_lines],0,width);
         str_index = line_start_index;
